@@ -1,6 +1,8 @@
+import java.util.List;
+ 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Tutorial {
@@ -10,7 +12,7 @@ public class Tutorial {
 		//exercise2();
 		//exercise3();
 		//exercise4();
-		exercise5();
+		//exercise5();
 		exercise6();
 	}
 	public static void exercise1(){
@@ -120,6 +122,52 @@ public class Tutorial {
 	}
 
 	public static void exercise6(){
+		WebDriver driver = new FirefoxDriver();
+		
+		String url = "http://toolsqa.wpengine.com/automation-practice-form/";
+		driver.get(url);
+		
+		//Selecting the female radio button for category sex
+		List<WebElement> radioBtnSex = driver.findElements(By.name("sex"));
+		
+		//Boolean variable will be the button's value
+		boolean radioV = false;
+		radioV = radioBtnSex.get(0).isSelected();
+		
+		//Checks if first value is selected
+		if(radioV) {
+			//Second radio button will be selected
+			radioBtnSex.get(1).click();
+		}
+		else {
+			//First radio button is selected	
+			radioBtnSex.get(0).click();
+		}
+
+		//Selecting the third radio button for years of experience
+		WebElement radioBtnExp = driver.findElement(By.id("exp-2"));
+		radioBtnExp.click();
+		
+		//Select check box for automation tester for profession category
+		List<WebElement> checkBoxPro = driver.findElements(By.name("profession"));
+		
+		int choices = checkBoxPro.size();
+		
+		for(int x=0; x<choices; x++) {
+			String value = checkBoxPro.get(x).getAttribute("value");
+			
+			if(value.equalsIgnoreCase("Automation Tester")) {
+				checkBoxPro.get(x).click();
+			break;
+			}
+		}
+		
+		//Select check box for Selenium IDE
+		WebElement oCheckBox = driver.findElement(By.cssSelector("input[value='Selenium IDE']"));
+		oCheckBox.click();
+		
+		driver.close();
+		
 	}
 }
 
