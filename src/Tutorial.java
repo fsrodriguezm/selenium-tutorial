@@ -5,12 +5,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Tutorial {
 	public static void main (String [] args) {
-		System.setProperty("webdriver.gecko.driver","C:\\Users\\frodriguez\\Downloads\\geckodriver-v0.18.0-win32\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\frodriguez\\eclipse-workspace\\selenium-tutorial\\webdriver\\geckodriver.exe");
 		//exercise1();
 		//exercise2();
 		//exercise3();
 		//exercise4();
-		//exercise5();
+		exercise5();
 		exercise6();
 	}
 	public static void exercise1(){
@@ -120,7 +120,6 @@ public class Tutorial {
 	}
 
 	public static void exercise6(){
-		http://download.eclipse.org/egit/updates
 	}
 }
 
