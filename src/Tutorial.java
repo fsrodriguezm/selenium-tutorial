@@ -120,7 +120,7 @@ public class Tutorial {
 	}
 
 	public static void exercise6(){
-		
+		http://download.eclipse.org/egit/updates
 	}
 }
 
